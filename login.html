@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicure Login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/c0adbb8084.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            /* background-color: #f4f4f4; */
+            color: #333;
+            width: 100%;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .container {
+            /* background-color: #fff; */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-top: 70px;
+            transition: background-color 0.3s;
+        }
+
+        .form-group {
+            margin-bottom: 40px;
+        }
+
+        .btn-login {
+            background-color: #4CAF50;
+            color: #fff;
+        }
+
+        .btn-signup {
+            background-color: #008CBA;
+            color: #fff;
+        }
+
+        .dark-mode {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .welcome-popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #008CBA;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            animation: slide-down 1s ease-in-out;
+        }
+    
+        @keyframes slide-down {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="welcome-popup">
+        <p>Welcome to Medicure, Your Online Pharmacy!</p>
+    </div>
+
+    <div class="container">
+        <h2 class="text-center">Medicure</h2>
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#customer-login">Customer Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#store-owner-login">Store Owner Login</a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div id="customer-login" class="container tab-pane active"><br>
+                <h3>Customer Login</h3>
+                <form id="customer-login-form">
+                    <div class="form-group">
+                        <label for="customer-email">Email:</label>
+                        <input type="email" class="form-control" id="customer-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="customer-password">Password:</label>
+                        <input type="password" class="form-control" id="customer-password" required>
+                    </div>
+                    <button type="submit" class="btn btn-login">Login</button>
+                </form>
+                <p>Don't have an account? <a href="#customer-signup" data-toggle="tab">Sign up</a></p>
+            </div>
+            <div id="store-owner-login" class="container tab-pane fade"><br>
+                <h3>Store Owner Login</h3>
+                <form id="store-owner-login-form">
+                    <div class="form-group">
+                        <label for="store-email">Email:</label>
+                        <input type="email" class="form-control" id="store-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for "store-password">Password:</label>
+                        <input type="password" class="form-control" id="store-password" required>
+                    </div>
+                    <button type="submit" class="btn btn-login" onsubmit="">Login</button>
+                </form>
+                <p>Don't have an account? <a href="#store-owner-signup" data-toggle="tab">Sign up</a></p>
+            </div>
+            <div id="customer-signup" class="container tab-pane fade"><br>
+                <h3>Customer Signup</h3>
+                <form id="customer-signup-form">
+                    <div class="form-group">
+                        <label for="customer-name">Name:</label>
+                        <input type="text" class="form-control" id="customer-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="customer-email-signup">Email:</label>
+                        <input type="email" class="form-control" id="customer-email-signup" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="customer-password-signup">Password:</label>
+                        <input type="password" class="form-control" id="customer-password-signup" required>
+                    </div>
+                    <button type="submit" class="btn btn-signup">Signup</button>
+                </form>
+            </div>
+            <div id="store-owner-signup" class="container tab-pane fade"><br>
+                <h3>Store Owner Signup</h3>
+                <form id="store-owner-signup-form">
+                    <div class="form-group">
+                        <label for="store-owner-name">Store Owner Name:</label>
+                        <input type="text" class="form-control" id="store-owner-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="store-location">Store Location:</label>
+                        <input type="text" class="form-control" id="store-location" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="store-id">Store ID:</label>
+                        <input type="text" class="form-control" id="store-id" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="store-email-signup">Email:</label>
+                        <input type="email" class="form-control" id="store-email-signup" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="store-password-signup">Password:</label>
+                        <input type="password" class="form-control" id="store-password-signup" required>
+                    </div>
+                    <button type="submit" class="btn btn-signup">Signup</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <button id="dark-mode-toggle" class="btn btn-primary">Dark Mode</button>
+
+    <script>
+        $(document).ready(function() {
+            $('.welcome-popup').show();
+            setTimeout(function() {
+                $('.welcome-popup').hide();
+            }, 5000); 
+        });
+
+        $('#dark-mode-toggle').click(function() {
+            $('body').toggleClass('dark-mode');
+            $('.container').toggleClass('dark-mode');
+        });
+
+        $(document).on('click', 'a[data-toggle="tab"]', function() {
+            // Reset the form validation messages when switching tabs
+            $('.alert-danger').remove();
+        });
+
+        // You can implement form validation logic here
+        $('#customer-login-form').submit(function(e) {
+            e.preventDefault();
+            // Handle customer login
+        });
+
+        $('#store-owner-login-form').submit(function(e) {
+            e.preventDefault();
+            // Handle store owner login
+        });
+
+        $('#customer-signup-form').submit(function(e) {
+            e.preventDefault();
+            // Handle customer signup
+        });
+
+        $('#store-owner-signup-form').submit(function(e) {
+            e.preventDefault();
+            // Handle store owner signup
+        });
+    </script>
+</body>
+</html>

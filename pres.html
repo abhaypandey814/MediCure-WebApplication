@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Prescription</title>
+    <link rel="stylesheet" href="pres.css">
+    <script src="https://kit.fontawesome.com/c0adbb8084.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <button id="dark-mode-toggle">Dark Mode</button>
+    <div class="container">
+        <div class="left-half">
+            <h1>Guide for a Valid Prescription</h1>
+            <div id="valid-prescriptions">
+                <li>Don't crop out any part of the image</li>
+                <li>Avoid Blurred image</li>
+                <li>Include details of Doctor and patients clinic visit date</li>
+                <li>Medicines will be dispended as per the prescription</li>
+                <li>Supported file type: jpeg, pdf, png, jpg</li>
+                <li>Maximum file size: 5 MB</li>            
+            </div>
+        </div>
+        <div class="right-half">
+            <h1>Upload Prescription</h1>
+            <span id="spans">Please attach a prescription to proceed</span>
+            <form action="upload.php" method="post" enctype="multipart/form-data">
+                <div class="file-input-container">
+                    <input type="file" name="prescription" id="prescription">
+                    <label for="prescription">Choose File</label>
+                    <span id="file-chosen">No file chosen(File Type: JPEG, PDF, PNG)</span>
+                </div>
+                <button type="submit"><i class="fa-solid fa-paperclip"></i>UPLOAD</button>
+            </form>
+
+        </div>
+    </div>
+    <script>
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const body = document.body;
+
+        darkModeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+        });
+
+        // const darkModeToggle = document.getElementById('dark-mode-toggle');
+        // const navbar = document.querySelector('.navbar');
+
+        // darkModeToggle.addEventListener('click', () => {
+        //     navbar.classList.toggle('dark-mode');
+        // });
+
+
+
+    </script>
+</body>
+</html>
