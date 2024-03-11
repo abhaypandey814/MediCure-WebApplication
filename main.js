@@ -176,28 +176,36 @@ function createProductBannerList(list, container){
     })
 }
 
-function createProductList(list, container){
-    list.forEach(function (el){
-        let div=document.createElement("div");
-        let div2=document.createElement("div");
-        let img=document.createElement("img");
-        let name=document.createElement("h4");
-        let mrp=document.createElement("p");
-        let price=document.createElement("h4");
+function createProductList(list, container) {
+    list.forEach(function (el) {
+        let div = document.createElement("div");
+        let div2 = document.createElement("div");
+        let img = document.createElement("img");
+        let name = document.createElement("h4");
+        let mrp = document.createElement("p");
+        let price = document.createElement("h4");
+        let addToCartButton = document.createElement("button"); // Add this line for the button
 
+        // Add classes and content for styling
+        div.setAttribute("class", "product-container");
         img.setAttribute("src", el.imgUrl);
         name.innerText = el.name;
         name.setAttribute("class", "name");
-        mrp.innerHTML= "MRP <span>Rs" + el.mrp + "</span>"
-        let p =(el.mrp/100) * (100-el.discount);
-        p=(Math.round(p*100)/100).toFixed(2);
-        price.innerHTML="Rs" + p + "<span>" + el.discount + "% OFF";
-        div2.append(name, mrp, price);
+        mrp.innerHTML = "MRP <span>Rs" + el.mrp + "</span>";
+        let discountedPrice = (el.mrp / 100) * (100 - el.discount);
+        discountedPrice = (Math.round(discountedPrice * 100) / 100).toFixed(2);
+        price.innerHTML = "Rs" + discountedPrice + "<span>" + el.discount + "% OFF";
+
+        // Styling for the button
+        addToCartButton.innerText = "Add to Cart";
+        addToCartButton.setAttribute("class", "add-to-cart-button");
+
+        // Append elements to the container
+        div2.append(name, mrp, price, addToCartButton);
         div.append(img, div2);
         container.append(div);
-    })
+    });
 }
-
 function createOfferList(list, container){
     list.forEach(function (el){
         let img=document.createElement("img");
