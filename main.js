@@ -1,3 +1,8 @@
+let cartQuantity=0;
+document.addEventListener('DOMContentLoaded', function() {
+   
+    document.querySelector('.cart-quantity').innerText = `${cartQuantity}`;
+});
 let bannerList=[
     {
         imgUrl:"https://cms-contents.pharmeasy.in/banner/93051e0bc77-MEGA20_App.jpg",
@@ -199,6 +204,15 @@ function createProductList(list, container) {
         // Styling for the button
         addToCartButton.innerText = "Add to Cart";
         addToCartButton.setAttribute("class", "add-to-cart-button");
+        addToCartButton.innerText = "Add to Cart";
+        addToCartButton.setAttribute("class", "add-to-cart-button");
+        addToCartButton.addEventListener('click',()=>{
+            alert('Product Added Successfully');
+            cartQuantity++;
+            document.querySelector('.cart-quantity').innerText=`${cartQuantity}`;
+        
+         });
+
 
         // Append elements to the container
         div2.append(name, mrp, price, addToCartButton);
