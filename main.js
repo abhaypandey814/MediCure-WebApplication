@@ -1,24 +1,19 @@
-let cartQuantity=0;
-document.addEventListener('DOMContentLoaded', function() {
-   
-    document.querySelector('.cart-quantity').innerText = `${cartQuantity}`;
-});
-let bannerList=[
+let bannerList = [
     {
-        imgUrl:"https://cms-contents.pharmeasy.in/banner/93051e0bc77-MEGA20_App.jpg",
+        imgUrl: "https://cms-contents.pharmeasy.in/banner/93051e0bc77-MEGA20_App.jpg",
     },
     {
-        imgUrl:"https://cms-contents.pharmeasy.in/banner/dc5281c821e-GRAND1000_App.jpg",
+        imgUrl: "https://cms-contents.pharmeasy.in/banner/dc5281c821e-GRAND1000_App.jpg",
     },
     {
-        imgUrl:"https://cms-contents.pharmeasy.in/banner/86df3a0dc37-HP.jpg",
+        imgUrl: "https://cms-contents.pharmeasy.in/banner/86df3a0dc37-HP.jpg",
     },
 ];
 
-let newLaunchesList=[
+let newLaunchesList = [
     {
-        name:"Kotex Overnight Period Panties - Medium / Large SiZe, Pack of 2 Panties",
-        imgUrl:"https://cdn01.pharmeasy.in/dam/products_otc/W66447/kotex-overnight-period-panties-medium-large-size-pack-of-2-panties-2-1652778799.jpg?dim=1024x0",
+        name: "Kotex Overnight Period Panties - Medium / Large Size, Pack Of 2 Panties",
+        imgUrl: "https://cdn01.pharmeasy.in/dam/products_otc/W66447/kotex-overnight-period-panties-medium-large-size-pack-of-2-panties-2-1652778799.jpg?dim=1024x0",
         mrp: 95,
         discount: 15,
     },
@@ -60,27 +55,33 @@ let newLaunchesList=[
     },
 ];
 
-let trendingProdList=[
+let trendingProdList = [
     {
-        name:"Supradyn Daily Multivitamin tablets 15s",
-        imgUrl: "https://cdn01.pharmeasy.in/dam/products_otc/T70695/supradyn-daily-multivitamin-tablets-15s-1-1641793954.jpg?dim=329x320&dpr=1&q=100",
-        marp: 54,
+        name: "Supradyn Daily Multivitamin Tablets 15s",
+        imgUrl: "https://cdn01.pharmeasy.in/dam/products_otc/T70695/supradyn-daily-multivitamin-tablets-15s-1-1641793954.jpg?dim=320x320&dpr=1&q=100",
+        mrp: 54,
         discount: 5,
     },
     {
-        name: "Everherb Karela Jamun Juice - Helps Maintain Healthy Sugar Levels -Helps In Weight Management - 1l",
+        name: "Supradyn Daily Multivitamin Tablets 15s",
+        imgUrl: "https://cdn01.pharmeasy.in/dam/products_otc/T70695/supradyn-daily-multivitamin-tablets-15s-1-1641793954.jpg?dim=320x320&dpr=1&q=100",
+        mrp: 54,
+        discount: 5,
+    },
+    {
+        name: "Everherb Karela Jamun Juice - Helps Maintains Healthy Sugar Levels -Helps In Weight Management - 1l",
         imgUrl: "https://cdn01.pharmeasy.in/dam/products_otc/L79986/everherb-karela-jamun-juice-helps-maintains-healthy-sugar-levels-helps-in-weight-management-1l-2-1654234653.jpg?dim=320x320&dpr=1&q=100",
         mrp: 399,
         discount: 48,
     },
     {
-        name: "Dr Morepen Gluce One Bg 03 Glucometer Test Strips Box of 50",
+        name: "Dr Morepen Gluco One Bg 03 Glucometer Test Strips Box Of 50",
         imgUrl: "https://cdn01.pharmeasy.in/dam/products_otc/I05582/dr-morepen-gluco-one-bg-03-glucometer-test-strips-box-of-50-1-1654168216.jpg?dim=1024x0",
         mrp: 840,
         discount: 24,
     },
     {
-        name: "Dettol Antiseptic Liquid Bottle of 550 Ml",
+        name: "Dettol Antiseptic Liquid Bottle Of 550 Ml",
         imgUrl: "https://cdn01.pharmeasy.in/dam/products_otc/I40695/dettol-antiseptic-liquid-bottle-of-550-ml-2-1656923531.jpg?dim=1024x0",
         mrp: 194.6,
         discount: 7,
@@ -92,88 +93,429 @@ let trendingProdList=[
         discount: 30,
     },
     {
-        name:"Supradyn Daily Multivitamin tablets 15s",
-        imgUrl: "https://cdn01.pharmeasy.in/dam/products_otc/T70695/supradyn-daily-multivitamin-tablets-15s-1-1641793954.jpg?dim=329x320&dpr=1&q=100",
-        marp: 54,
-        discount: 5,
-    },
-    {
-        name: "Vicks Vaporub 25ml, Relief Froom Cold, Cought, Headache And  Body Pain",
+        name: "Vicks Vaporub 25ml, Relief From Cold, Cough, Headache And Body Pain",
         imgUrl: "https://cdn01.pharmeasy.in/dam/products_otc/181135/vicks-vaporub-25ml-relief-from-cold-cough-headache-and-body-pain-2-1654078746.jpg?dim=1024x0",
         mrp: 85,
         discount: 11,
     },
-]
+];
 
-let freqBookedLabTestList=[
+let freqBookedLabTestList = [
     {
-        discount:60,
-        name:"Post Pradndial Blood Sugar (PPBS)",
+        discount: 60,
+        name: "Post Pradndial Blood Sugar (PPBS)",
         description: "Measure your blood sugar levels after last meal",
         mrp: 500,
         price: 199,
-        imgUrl:"https://s3.ap-south-1.amazonaws.com/pe-neon-public/diagnostics/production/recommendationWidget/b4682c3fb22d39479c6d7a4a481e5ae5.png?dim=96x0",
+        imgUrl: "https://s3.ap-south-1.amazonaws.com/pe-neon-public/diagnostics/production/recommendationWidget/b4682c3fb22d39479c6d7a4a481e5ae5.png?dim=96x0",
     },
     {
-        discount:64,
-        name:"Comprehensive Full Body Checkup with Vitamin D & B12",
-        description: "Measure Vitamin D & B12 levels and other essential parameters",
-        mrp:4199,
+        discount: 64,
+        name: "Comprehensive Full Body Checkup with Vitamin D & B12",
+        description:
+            "Measure Vitamin D & B12 levels and other essential parameters",
+        mrp: 4199,
         price: 1499,
         imgUrl: "https://s3.ap-south-1.amazonaws.com/pe-neon-public/diagnostics/production/recommendationWidget/9fc5a0ab225a3ca2bc1702149e07f311.png?dim=96x0",
     },
     {
-        discount:71,
-        name:"Random Blood Sugar (RBS)",
-        description:"Testing of the blood sugar level at any time of the day",
+        discount: 71,
+        name: "Random Blood Sugar (RBS)",
+        description: "Testing of the blood sugar level at any time of the day",
         mrp: 350,
-        price:99,
-        imgUrl:"https://s3.ap-south-1.amazonaws.com/pe-neon-public/diagnostics/production/recommendationWidget/1d842b1450b53455922a5b6de3a3a980.png?dim=96x0",
+        price: 99,
+        imgUrl: "https://s3.ap-south-1.amazonaws.com/pe-neon-public/diagnostics/production/recommendationWidget/1d842b1450b53455922a5b6de3a3a980.png?dim=96x0",
     },
     {
-        discount:"PSP-D",
-        name:"",
-        description: "To assess the renal function for early detection of any kidney disease",
+        discount: "PSP-D",
+        name: "",
+        description:
+            "To assess the renal function for early detection of any kidney disease",
         mrp: "",
-        price:99,
-        imgUrl:"https://s3.ap-south-1.amazonaws.com/pe-neon-public/diagnostics/production/recommendationWidget/d0c1ca33ee2637239dfed1645ed02aa8.png?dim=96x0",
+        price: 99,
+        imgUrl: "https://s3.ap-south-1.amazonaws.com/pe-neon-public/diagnostics/production/recommendationWidget/d0c1ca33ee2637239dfed1645ed02aa8.png?dim=96x0",
     },
-    
-]
+];
+
+let paymentOfferList = [
+    {
+        name: "Amazon Pay",
+        imgUrl: "https://cdn01.pharmeasy.in/dam/banner/banner/1412bb76dee-AMAZONPAY.jpg?dim=1440x0",
+    },
+    {
+        name: "Paytm",
+        imgUrl: "https://cdn01.pharmeasy.in/dam/banner/banner/bb9b358232d-PAYTM-02.jpg?dim=1440x0",
+    },
+    {
+        name: "MobiKwik",
+        imgUrl: "https://cdn01.pharmeasy.in/dam/banner/banner/2a0795e595e-MOBIKWIK.jpg?dim=1440x0",
+    },
+    {
+        name: "Ola Money",
+        imgUrl: "https://cdn01.pharmeasy.in/dam/banner/banner/a20dea5ddad-OLA-MONEY-02.jpg?dim=1024x0",
+    },
+    {
+        name: "Freecharge",
+        imgUrl: "https://cdn01.pharmeasy.in/dam/banner/banner/e1bf5c7dae5-FREECHARGE-02.jpg?dim=1024x0",
+    },
+    {
+        name: "Airtel Payment",
+        imgUrl: "https://cdn01.pharmeasy.in/dam/banner/banner/7297689b914-AIRTEL.jpg?dim=1024x0",
+    },
+];
+
+let wellnessEssentialsList = [
+    {
+        name: "Evion 400mg Strip of 10 Capsules",
+        imgUrl: "https://cdn01.pharmeasy.in/dam/products_otc/071710/evion-400mg-strip-of-10-capsules-2-1656662057.jpg?dim=1024x0",
+        mrp: 35,
+        discount: 10,
+    },
+
+    {
+        name: "Neurobin Forte Tablet 30's",
+        imgUrl: "https://cdn01.pharmeasy.in/dam/products_otc/I09432/neurobion-forte-tablet-30s-2-1656661904.jpg?dim=1024x0",
+        mrp: 34.7,
+        discount: 10,
+    },
+    {
+        name: "Gas O Fast Active Jeera Axtacid Sachet Of 5 G",
+        imgUrl: "https://cdn01.pharmeasy.in/dam/products_otc/I34550/gas-o-fast-active-jeera-antacid-sachet-of-5-g-2-1654166983.jpg?dim=1024x0",
+        mrp: 10,
+        discount: 15,
+    },
+    {
+        name: "Pharmeasy Multivitamin Multimineral - Immunity Booster - Complete Nutrition - Bottle Of 60",
+        imgUrl: "https://cdn01.pharmeasy.in/dam/products_otc/T60720/pharmeasy-multivitamin-multimineral-immunity-booster-complete-nutrition-bottle-of-60-2-1658316798.jpg?dim=320x320&dpr=1&q=100",
+        mrp: 54,
+        discount: 15,
+    },
+    {
+        name: "Electral Powder 21.80gm",
+        imgUrl: "https://cdn01.pharmeasy.in/dam/products_otc/065285/electral-powder-2180gm-2-1653986181.jpg?dim=1024x0",
+        mrp: 21.05,
+        discount: 15,
+    },
+    {
+        name: "Supradyn Daily Multivitamin Tablets 15s",
+        imgUrl: "https://cdn01.pharmeasy.in/dam/products_otc/T70695/supradyn-daily-multivitamin-tablets-15s-1-1641793954.jpg?dim=1024x0",
+        mrp: 54,
+        discount: 5,
+    },
+];
+
+let featuredBrandList = [
+    {
+        name: "Glucon-D",
+        imgUrl: "https://cms-contents.pharmeasy.in/carousel_item/e642f1b8237-Glucon_D.jpg?dim=1024x0",
+    },
+    {
+        name: "Himalaya",
+        imgUrl: "https://cms-contents.pharmeasy.in/carousel_item/3eb4eb6bfbe-App_Himalaya.jpg?dim=1440x0",
+    },
+    {
+        name: "Sugar Free",
+        imgUrl: "https://cms-contents.pharmeasy.in/carousel_item/1466c422fcd-Sugerfree.png?dim=1440x0",
+    },
+    {
+        name: "LivEasy",
+        imgUrl: "https://cms-contents.pharmeasy.in/carousel_item/1151b7d7c0e-LivEasy-min.png?dim=1440x0",
+    },
+    {
+        name: "Huggies",
+        imgUrl: "https://cms-contents.pharmeasy.in/carousel_item/201210bc27d-App_Huggies.jpg?dim=1440x0",
+    },
+    {
+        name: "Wellbeieng Nutrition",
+        imgUrl: "https://cms-contents.pharmeasy.in/carousel_item/d6726e69b22-04.jpg?dim=1440x0",
+    },
+    {
+        name: "Revital",
+        imgUrl: "https://cms-contents.pharmeasy.in/carousel_item/c9fc0cd6ef6-Revital-min.png?dim=1440x0",
+    },
+    {
+        name: "Volini",
+        imgUrl: "https://cms-contents.pharmeasy.in/carousel_item/e8a5cabe9f3-Volini-min.png?dim=1024x0",
+    },
+    {
+        name: "Pentasure",
+        imgUrl: "https://cms-contents.pharmeasy.in/carousel_item/c774461a093-Pentasure_App.jpg?dim=1024x0",
+    },
+    {
+        name: "Sirona",
+        imgUrl: "https://cms-contents.pharmeasy.in/carousel_item/587eeb1dcb8-App_Sirona.jpg?dim=1024x0",
+    },
+    {
+        name: "Abzorb",
+        imgUrl: "https://cms-contents.pharmeasy.in/carousel_item/2318a0e5326-App_Abzorb.jpg?dim=1024x0",
+    },
+    {
+        name: "EverHerb",
+        imgUrl: "https://cms-contents.pharmeasy.in/carousel_item/2f3e832e341-Everherb-min.png?dim=1024x0",
+    },
+    {
+        name: "Pharmeasy",
+        imgUrl: "https://cms-contents.pharmeasy.in/carousel_item/40facc7fa28-Pharmeasy-App.jpg?dim=1024x0",
+    },
+];
+
+let featuredBrandOfferList = [
+    {
+        imgUrl: "https://cdn01.pharmeasy.in/dam/banner/banner/a9ce64845df-TRENDING_DEALS.jpg?dim=1440x200",
+    },
+    {
+        imgUrl: "https://cdn01.pharmeasy.in/dam/banner/banner/9fe349e885e-WEIGHING_MACHINE.jpg?dim=1440x0",
+    },
+    {
+        imgUrl: "https://cdn01.pharmeasy.in/dam/banner/banner/414524ad3dd-SNACK.jpg?dim=1440x0",
+    },
+    {
+        imgUrl: "https://cdn01.pharmeasy.in/dam/banner/banner/fcbf95577c3-VELCRO.jpg?dim=1440x0",
+    },
+    {
+        imgUrl: "https://cdn01.pharmeasy.in/dam/banner/banner/a9ad640ce01-4.jpg?dim=1440x0",
+    },
+    {
+        imgUrl: "https://cdn01.pharmeasy.in/dam/banner/banner/a6f2ed93479-BACK_SUPPORT.jpg?dim=1024x0",
+    },
+    {
+        imgUrl: "https://cdn01.pharmeasy.in/dam/banner/banner/93ef9d6df4f-SLIPPERS.jpg?dim=1024x0",
+    },
+    {
+        imgUrl: "https://cdn01.pharmeasy.in/dam/banner/banner/6e16a38ea89-ORTHO_PEDOC.jpg?dim=1024x0",
+    },
+];
+
+let dealsOfTheDayList = [
+    {
+        name: "Sirona Feminine Cramp Relief Patch Packet Of 5 'S",
+        imgUrl: "https://cdn01.pharmeasy.in/dam/products_otc/I48459/sirona-feminine-cramp-relief-patch-packet-of-5-s-2-1641788205.jpg?dim=320x320&dpr=1&q=100",
+        mrp: 240,
+        discount: 10,
+    },
+    {
+        name: "Liveasy Wellness Apple Cider Vinegar With Mother -Improves Metabolism- 500ml Bottle",
+        imgUrl: "https://cdn01.pharmeasy.in/dam/products_otc/J51815/liveasy-wellness-apple-cider-vinegar-with-mother-improves-metabolism-500ml-bottle-2-1654165611.jpg?dim=320x320&dpr=1&q=100",
+        mrp: 640,
+        discount: 65,
+    },
+    {
+        name: "Revital H Women Multivitamin With Calcium, Zinc, Ginseng For Immunity, Strong Bones & Energy 30 Tablets",
+        imgUrl: "https://cdn01.pharmeasy.in/dam/products_otc/I00596/revital-h-women-multivitamin-with-calcium-zinc-ginseng-for-immunity-strong-bones-energy-30-tablets-1-1654168794.jpg?dim=320x320&dpr=1&q=100",
+        mrp: 345,
+        discount: 15,
+    },
+    {
+        name: "Volini Pain Relief Gel Tube Of 75 G",
+        imgUrl: "https://cdn01.pharmeasy.in/dam/products_otc/183157/volini-pain-relief-gel-tube-of-75-g-1-1654078754.jpg?dim=320x320&dpr=1&q=100",
+        mrp: 245,
+        discount: 15,
+    },
+    {
+        name: "Evion 400mg Strip of 10 Capsules",
+        imgUrl: "https://cdn01.pharmeasy.in/dam/products_otc/071710/evion-400mg-strip-of-10-capsules-2-1656662057.jpg?dim=1024x0",
+        mrp: 35,
+        discount: 10,
+    },
+    {
+        name: "Livogen Z Captab 15'S",
+        imgUrl: "https://cdn01.pharmeasy.in/dam/products_otc/I32380/livogen-z-captab-15s-2-1656662098.jpg?dim=320x320&dpr=1&q=100",
+        mrp: 70.4,
+        discount: 10,
+    },
+    {
+        name: "Volini Pain Relief Gel Tube Of 75 G",
+        imgUrl: "https://cdn01.pharmeasy.in/dam/products_otc/183157/volini-pain-relief-gel-tube-of-75-g-1-1654078754.jpg?dim=320x320&dpr=1&q=100",
+        mrp: 245,
+        discount: 15,
+    },
+];
+
+let spotlightList = [
+    {
+        name: "Evion 400mg Strip of 10 Capsules",
+        imgUrl: "https://cdn01.pharmeasy.in/dam/products_otc/071710/evion-400mg-strip-of-10-capsules-2-1656662057.jpg?dim=1024x0",
+        mrp: 35,
+        discount: 10,
+    },
+    {
+        name: "Evion 400mg Strip of 10 Capsules",
+        imgUrl: "https://cdn01.pharmeasy.in/dam/products_otc/071710/evion-400mg-strip-of-10-capsules-2-1656662057.jpg?dim=1024x0",
+        mrp: 35,
+        discount: 10,
+    },
+
+    {
+        name: "Neurobin Forte Tablet 30's",
+        imgUrl: "https://cdn01.pharmeasy.in/dam/products_otc/I09432/neurobion-forte-tablet-30s-2-1656661904.jpg?dim=1024x0",
+        mrp: 34.7,
+        discount: 10,
+    },
+    {
+        name: "Gas O Fast Active Jeera Axtacid Sachet Of 5 G",
+        imgUrl: "https://cdn01.pharmeasy.in/dam/products_otc/I34550/gas-o-fast-active-jeera-antacid-sachet-of-5-g-2-1654166983.jpg?dim=1024x0",
+        mrp: 10,
+        discount: 15,
+    },
+    {
+        name: "Pharmeasy Multivitamin Multimineral - Immunity Booster - Complete Nutrition - Bottle Of 60",
+        imgUrl: "https://cdn01.pharmeasy.in/dam/products_otc/T60720/pharmeasy-multivitamin-multimineral-immunity-booster-complete-nutrition-bottle-of-60-2-1658316798.jpg?dim=320x320&dpr=1&q=100",
+        mrp: 54,
+        discount: 15,
+    },
+    {
+        name: "Electral Powder 21.80gm",
+        imgUrl: "https://cdn01.pharmeasy.in/dam/products_otc/065285/electral-powder-2180gm-2-1653986181.jpg?dim=1024x0",
+        mrp: 21.05,
+        discount: 15,
+    },
+    {
+        name: "Supradyn Daily Multivitamin Tablets 15s",
+        imgUrl: "https://cdn01.pharmeasy.in/dam/products_otc/T70695/supradyn-daily-multivitamin-tablets-15s-1-1641793954.jpg?dim=1024x0",
+        mrp: 54,
+        discount: 5,
+    },
+];
+
+let productPromo = [
+    {
+        imgUrl: "https://cdn01.pharmeasy.in/dam/banner/banner/19a254ab992-SB.jpg?dim=1024x0",
+    },
+    {
+        imgUrl: "https://cdn01.pharmeasy.in/dam/banner/banner/1588d37d1d8-Toothsi-Creative-min.jpg?dim=1024x0",
+    },
+    {
+        imgUrl: "https://cdn01.pharmeasy.in/dam/banner/banner/e695cfa1018-Sevenseas-SRPbanner.jpg?dim=1024x0",
+    },
+    {
+        imgUrl: "https://cdn01.pharmeasy.in/dam/banner/banner/68a6834f2f5-Nycil_July2022_min.jpg?dim=1024x0",
+    },
+    {
+        imgUrl: "https://cdn01.pharmeasy.in/dam/banner/banner/e65a05f443f-Livogen-SRPbanner.jpg?dim=1024x0",
+    },
+];
+
+let healthArticleList = [
+    {
+        imgUrl: "https://blog-images.pharmeasy.in/2022/07/18132435/Blog-Image-18-july-01.jpg?dim=1024x0",
+        title: "What Is Syphilis? Read This Blog To Know More",
+    },
+    {
+        imgUrl: "https://blog-images.pharmeasy.in/2022/07/18143950/Blog-Image-18-july-02.jpg?dim=1024x0",
+        title: "All You Need To Know About Common Sexually Transmitted Diseases",
+    },
+    {
+        imgUrl: "https://blog-images.pharmeasy.in/2022/07/18013014/18.jpg?dim=1024x0",
+        title: "Best Home Remedies For Thick Eyebrows",
+    },
+    {
+        imgUrl: "https://blog-images.pharmeasy.in/2022/07/18011028/6.jpg",
+        title: "Natural Home Remedies To Reduce Belly Fat",
+    },
+    {
+        imgUrl: "https://blog-images.pharmeasy.in/2022/07/18005945/7.jpg",
+        title: "Best Home Remedies for Oily Scalp and Hair",
+    },
+    {
+        imgUrl: "https://blog-images.pharmeasy.in/2021/01/03163336/shutterstock_1678501243-1-768x512.jpg",
+        title: "Turmeric: Uses, Benefits, Side Effects, and More!",
+    },
+];
 
 
-let bannerContainer=document.querySelector(".banner");
+
+let bannerContainer = document.querySelector(".banner");
 createOfferList(bannerList, bannerContainer)
 
-let newLaunchesContainer=document.querySelector(".new-launches>.product-cards");
+let newLaunchesContainer = document.querySelector(".new-launches > .product-cards");
 createProductList(newLaunchesList, newLaunchesContainer)
 
-let trendingContainer=document.querySelector(".trending > .product-cards");
+let trendingContainer = document.querySelector(".trending > .product-cards");
 createProductList(trendingProdList, trendingContainer);
 
-let freqBookedLabTestContainer=document.querySelector(".freq-booked-lab-tests>.product-banner");
-createProductBannerList(freqBookedLabTestList, freqBookedLabTestContainer)
+let freqBookedLabTestContainer = document.querySelector(".freq-booked-lab-tests > .product-banner");
+createProductBannerList(freqBookedLabTestList, freqBookedLabTestContainer);
 
-function createProductBannerList(list, container){
-    list.forEach(function (el){
-        let div=document.createElement("div");
-        let div2=document.createElement("div");
-        let img=document.createElement("img");
-        let name=document.createElement("h4");
-        let discount=document.createElement("h4");
-        let description=document.createElement("p");
-        let price=document.createElement("h4");
+let paymentOfferContainer = document.querySelector(".payment-offers > div");
+createOfferList(paymentOfferList, paymentOfferContainer);
 
-        if(typeof el.discount =="number"){
-            discount.innerText=el.discount+"% OFF";
-            price.innerHTML="<span>₹" + el.mrp+ "</span><br>" +"₹"+el.price;
-        }else{
-            discount.innerText=el.discount;
+let wellnessEssentialsContainer = document.querySelector(".wellness-essentials > .product-cards2");
+createProductList(wellnessEssentialsList, wellnessEssentialsContainer);
+
+let featuredBrandContainer = document.querySelector(".featured-brands > .brand-promo");
+createFeatureBrandList(featuredBrandList, featuredBrandContainer);
+
+let featuredBrandOfferContainer = document.querySelector(".featured-brands > .brand-offer");
+createOfferList(featuredBrandOfferList, featuredBrandOfferContainer);
+
+let dealsOfTheDayContainer = document.querySelector(".deals-of-the-day > .product-cards");
+createProductList(dealsOfTheDayList, dealsOfTheDayContainer);
+
+let spotlightContainer = document.querySelector(".spotlight > .product-cards");
+createProductList(spotlightList, spotlightContainer);
+
+let spotlightPromoContainer = document.querySelector(".spotlight > .product-promo");
+createOfferList(productPromo, spotlightPromoContainer);
+
+let healthArticleContainer = document.querySelector(".health-articles > div");
+createHealthArticleList(healthArticleList, healthArticleContainer);
+
+let customerReviewContainer = document.querySelector(".customer-review > .reviews");
+createCustomerReview(customerReviewList, customerReviewContainer);
+
+function createCustomerReview(list, container) {
+    list.forEach(function (el) {
+        let div = document.createElement("div");
+        let div2 = document.createElement("div");
+        let date = document.createElement("p");
+        let name = document.createElement("h3");
+        let i = document.createElement("i");
+        let review = document.createElement("p");
+
+        name.innerText = el.name;
+        date.innerText = el.date;
+
+        i.setAttribute("class", "fa-solid fa-quote-left");
+        review.innerText = el.review;
+
+        div2.append(i, review);
+        div.append(name, date, div2);
+        container.append(div);
+    })
+}
+
+function createFeatureBrandList(list, container) {
+    list.forEach(function (el) {
+        let div = document.createElement("div");
+        let img = document.createElement("img");
+        let name = document.createElement("h4");
+        img.setAttribute("src", el.imgUrl);
+        name.innerText = el.name;
+        div.append(img, name);
+        container.append(div);
+    })
+}
+
+function createProductBannerList(list, container) {
+    list.forEach(function (el) {
+        let div = document.createElement("div");
+        let div2 = document.createElement("div");
+        let img = document.createElement("img");
+        let name = document.createElement("h4");
+        let discount = document.createElement("h4");
+        let description = document.createElement("p");
+        let price = document.createElement("h4");
+
+        if (typeof el.discount == "number") {
+            discount.innerText = el.discount + "% OFF";
+            price.innerHTML = "<span>₹" + el.mrp + "</span><br>" + "₹" + el.price;
+        } else {
+            discount.innerText = el.discount;
             discount.setAttribute("class", "no-discount");
-            price.innerHTML= "₹"+el.price;
+            price.innerHTML = "₹" + el.price;
         }
-        name.innerText=el.name;
-        description.innr=el.description;
+        name.innerText = el.name;
+        description.innerText = el.description;
         img.setAttribute("src", el.imgUrl);
         div2.append(price, img);
         div.append(discount, name, description, div2);
@@ -189,41 +531,38 @@ function createProductList(list, container) {
         let name = document.createElement("h4");
         let mrp = document.createElement("p");
         let price = document.createElement("h4");
-        let addToCartButton = document.createElement("button"); // Add this line for the button
 
-        // Add classes and content for styling
-        div.setAttribute("class", "product-container");
         img.setAttribute("src", el.imgUrl);
         name.innerText = el.name;
         name.setAttribute("class", "name");
-        mrp.innerHTML = "MRP <span>Rs" + el.mrp + "</span>";
-        let discountedPrice = (el.mrp / 100) * (100 - el.discount);
-        discountedPrice = (Math.round(discountedPrice * 100) / 100).toFixed(2);
-        price.innerHTML = "Rs" + discountedPrice + "<span>" + el.discount + "% OFF";
-
-        // Styling for the button
-        addToCartButton.innerText = "Add to Cart";
-        addToCartButton.setAttribute("class", "add-to-cart-button");
-        addToCartButton.innerText = "Add to Cart";
-        addToCartButton.setAttribute("class", "add-to-cart-button");
-        addToCartButton.addEventListener('click',()=>{
-            alert('Product Added Successfully');
-            cartQuantity++;
-            document.querySelector('.cart-quantity').innerText=`${cartQuantity}`;
-        
-         });
-
-
-        // Append elements to the container
-        div2.append(name, mrp, price, addToCartButton);
+        mrp.innerHTML = "MRP <span>₹" + el.mrp + "</span>";
+        let p = (el.mrp / 100) * (100 - el.discount);
+        p = (Math.round(p * 100) / 100).toFixed(2);
+        price.innerHTML = "₹" + p + "<span>" + el.discount + "% OFF";
+        div2.append(name, mrp, price);
         div.append(img, div2);
         container.append(div);
-    });
+    })
 }
-function createOfferList(list, container){
-    list.forEach(function (el){
-        let img=document.createElement("img");
+
+function createOfferList(list, container) {
+    list.forEach(function (el) {
+        let img = document.createElement("img");
         img.setAttribute("src", el.imgUrl);
         container.append(img);
+    });
+}
+
+function createHealthArticleList(list, container) {
+    list.forEach(function (el) {
+        let div = document.createElement("div");
+        let img = document.createElement("img");
+        let title = document.createElement("p");
+
+        img.setAttribute("src", el.imgUrl);
+        title.innerText = el.title;
+
+        div.append(img, title);
+        container.append(div);
     })
 }
